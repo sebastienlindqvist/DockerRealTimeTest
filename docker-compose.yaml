@@ -9,3 +9,13 @@ services:
     #  rttime: -1 # corresponds to 'unlimited'
     #  memlock: 8428281856
     #network_mode: host
+  pythonapp1:
+    build: ./
+    command: python3 ./hello_world.py
+    cap_add:
+      - SYS_NICE
+    ulimits:
+      rtprio: 99
+      rttime: -1 # corresponds to 'unlimited'
+      memlock: 8428281856
+    network_mode: host
