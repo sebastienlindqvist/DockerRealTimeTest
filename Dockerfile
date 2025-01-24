@@ -1,8 +1,6 @@
-FROM ubuntu:latest
 
-RUN apt update
-RUN apt install python3 -y
-
-WORKDIR /usr/app/src
-
-COPY hello_world.py ./
+# Dockerfile, Image, container
+FROM python:3.8
+ADD hello_world.py .
+#ADD any libraries necessary 
+CMD ["python","./hello_world.py"]
